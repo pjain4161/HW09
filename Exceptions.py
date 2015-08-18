@@ -2,9 +2,9 @@ x = 0
 y = 1
 names = ["Guido"]
 try:
-    this
-    print names[y]
-    ans = 3/x
+#     this
+#     print names[y]
+#     ans = 3/x
     if x < 2:
         raise ValueError("this function requires x >= 2")
     pass

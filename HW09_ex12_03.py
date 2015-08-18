@@ -8,15 +8,33 @@
 #     b
 ###############################################################################
 # Imports
+import operator
 
 # Body
 
 def most_frequent(s):
-    print s
+    dict ={}
+    for chars in s:
+        dict[chars] = 1 + dict.get(chars, 0)
+        
+    dict_new = {}
+        
+    for key, val in dict.items():
+        if (key.isupper()):
+            key = key.lower()
+        dict_new[key] = val + dict_new.get(key, 0)
+    
+    
+    sorted_list = sorted(dict_new.items(), key=operator.itemgetter(1))
+    
+    for item in reversed(sorted_list):
+        print item[0]
+        
 
 ###############################################################################
 def main():   # DO NOT CHANGE BELOW
     print("Example 1:")
+    most_frequent("aaAbcc")
     most_frequent("abcdefghijklmnopqrstuvwxyz")
     print("\nExample 2:")
     most_frequent("The quick brown fox jumps over the lazy dog")

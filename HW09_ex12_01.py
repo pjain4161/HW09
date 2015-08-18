@@ -11,9 +11,16 @@
 #     returns their sum.
 ###############################################################################
 # Imports
+from _ast import Num
 
 # Body
-
+def sumall(*args):
+    sum = 0
+    for num in args:
+        sum += num
+    return sum
+        
+        
 
 
 ###############################################################################
